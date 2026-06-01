@@ -1,7 +1,7 @@
 import argparse
 import json
 
-import httpx
+import requests
 
 
 def login(endpoint, data):
@@ -11,7 +11,7 @@ def login(endpoint, data):
         print("json invalido")
         return
 
-    response = httpx.post(endpoint, json=data_dict)
+    response = requests.post(endpoint, data_dict)
 
     print("Status code", response.status_code)
 
